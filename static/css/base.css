@@ -25,6 +25,7 @@ header h1 a {
     
 .post-entry {
     margin-bottom: 2rem;
+    
 }
 
 .post-entry h2 {
@@ -39,6 +40,7 @@ header h1 a {
 .post-entry p {
     margin: 0;
     font-weight: 400;
+    color: blue;
 }
 
 .post-entry h2 a:hover {

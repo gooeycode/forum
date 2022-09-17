@@ -7,15 +7,27 @@
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
     </head>
     <body>
-        <header>
-            <h1>
-                <a href="{% url 'home' %}"> Songs Of The Day</a>
-
-            </h1>
-        </header>
         <div>
-            {% block content %}
-            {% endblock content %}
+            <header>              
+                <h1>
+                    <a href="{% url 'home' %}"> Rhythm Bounce</a>
+                </h1>
+                
+                <div class="nav-right">
+                    <a href="{% url 'post_new' %}"> + Add Song Of The Day </a>
+                </div>
+            </header>
+                {% if user.is_authenticated %}
+                    <p>Hi {{ user.username }}</p>
+                    <a href="{% url 'logout' %}">Log Out</a>
+                {% else %}
+                    <p>You are not logged in.</p>
+                    <a href="{% url 'login' %}">Log In</a>
+                {% endif %}
+
+
+                {% block content %}
+                {% endblock content %}
         </div>
     </body>
 </html>
